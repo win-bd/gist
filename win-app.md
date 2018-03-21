@@ -14,3 +14,10 @@ Add-AppxPackage -register "C:\Program Files\WindowsApps\Microsoft.Windows.Photos
 ```sh
 Get-AppxPackage Microsoft.Windows.Photos | Remove-AppxPackage
 ```
+
+* ### Install Calculator App From Powershell
+```sh
+Get-AppxPackage -allusers Microsoft.WindowsCalculator | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
+Get-AppxPackage Microsoft.WindowsCalculator -allusers | select PackageFullName
+Add-AppxPackage -register "C:\Program Files\WindowsApps\Microsoft.WindowsCalculator_10.1802.311.0_x64__8wekyb3d8bbwe\AppxManifest.xml" -DisableDevelopmentMode
+```
