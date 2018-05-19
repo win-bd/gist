@@ -3,3 +3,4 @@
 ```sh
 start cd C:\Android\sdk\platform-tools
 ```
+* In ` Windows Explorer ` address bar type ` cmd `
