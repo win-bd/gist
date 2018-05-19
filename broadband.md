@@ -1,4 +1,6 @@
-## Broadband Auto connection
+## Broadband Auto connection in Windows
+* Go to Task Scheduler
+* Create Basic Task
 ```sh
 rasdial "skyline" amran pass
 ```
