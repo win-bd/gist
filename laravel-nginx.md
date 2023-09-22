@@ -77,3 +77,5 @@ C:\Web\Nginx\hcon\hcon.exe C:\Programs\Sdk\Php\php-cgi.exe -b 127.0.0.1:9123
 start nginx
 nginx -s stop
 ```
+
+* [Ref](https://learn.microsoft.com/en-us/troubleshoot/developer/webapps/aspnetcore/practice-troubleshoot-linux/2-7-configure-second-nginx-site-hostname)
