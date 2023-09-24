@@ -5,22 +5,22 @@
 worker_processes  1;
 
 events {
-    worker_connections  1024;
+	worker_connections	1024;
 }
 
 http {
 
-    include       mime.types;
-    default_type  application/octet-stream;
+	include		  mime.types;
+	default_type  application/octet-stream;
 
-    sendfile        on;
+	sendfile		on;
 
-    keepalive_timeout  65;
-    
-    server {
-        listen       80;
-        server_name  localhost;
-	    root   C:\Web\Nginx\html\appmylara\public;
+	keepalive_timeout  65;
+	
+	server {
+		listen		 80;
+		server_name	 localhost;
+		root   C:\Web\Nginx\html\appmylara\public;
 		
 		add_header X-Frame-Options "SAMEORIGIN";
 		add_header X-Content-Type-Options "nosniff";
@@ -33,20 +33,20 @@ http {
 		}
 		
 		location = /favicon.ico { access_log off; log_not_found off; }
-		location = /robots.txt  { access_log off; log_not_found off; }
+		location = /robots.txt	{ access_log off; log_not_found off; }
 		
 		error_page 404 /index.php;
 		
 		location ~ \.php$ {
 			fastcgi_pass   127.0.0.1:9123;
-			fastcgi_param  SCRIPT_FILENAME  $realpath_root$fastcgi_script_name;
-			include        fastcgi_params;
+			fastcgi_param  SCRIPT_FILENAME	$realpath_root$fastcgi_script_name;
+			include		   fastcgi_params;
 		}
 		
 		location ~ /\.(?!well-known).* {
 			deny all;
 		}
-    }
+	}
 }
 
 ```
