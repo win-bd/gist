@@ -1,6 +1,7 @@
 ## Deploying Laravel App With Nginx in Windows System
 ### Nginx Configuration
 ```sh
+
 worker_processes  1;
 
 events {
@@ -19,7 +20,7 @@ http {
     server {
         listen       80;
         server_name  localhost;
-		root   C:\Web\Nginx\html\appmylara\public;
+	    root   C:\Web\Nginx\html\appmylara\public;
 		
 		add_header X-Frame-Options "SAMEORIGIN";
 		add_header X-Content-Type-Options "nosniff";
@@ -27,28 +28,27 @@ http {
 		index index.php;
 		charset utf-8;
 		
-        location / {
-            try_files $uri $uri/ /index.php?$query_string;
-        }
+		location / {
+			try_files $uri $uri/ /index.php?$query_string;
+		}
 		
 		location = /favicon.ico { access_log off; log_not_found off; }
 		location = /robots.txt  { access_log off; log_not_found off; }
 		
 		error_page 404 /index.php;
 		
-        location ~ \.php$ {
-            fastcgi_pass   127.0.0.1:9123;
+		location ~ \.php$ {
+			fastcgi_pass   127.0.0.1:9123;
 			fastcgi_param  SCRIPT_FILENAME  $realpath_root$fastcgi_script_name;
 			include        fastcgi_params;
-        }
+		}
 		
 		location ~ /\.(?!well-known).* {
 			deny all;
 		}
-		
     }
-
 }
+
 ```
 
 ### Windows Host File Configuration
