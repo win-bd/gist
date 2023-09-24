@@ -50,7 +50,7 @@ http {
 }
 
 ```
-## NPM Install
+### NPM Install
 ```sh
 npm install
 npm run build
